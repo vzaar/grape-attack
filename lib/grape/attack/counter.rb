@@ -43,7 +43,7 @@ module Grape
           adapter.set(key, "#{value}~#{exp}")
           adapter.expire(key, [0, exp - Time.now.to_i].max)
         end
-        remove_instance_variable(:@raw_value) unless @raw_value.nil
+        remove_instance_variable(:@raw_value) unless @raw_value.empty?
       end
 
       def fetch
