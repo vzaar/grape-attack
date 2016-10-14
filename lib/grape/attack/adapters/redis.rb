@@ -19,7 +19,7 @@ module Grape
 
         def set(key, value)
           with_custom_exception do
-            broker.set(et, value)
+            broker.set(key, value)
           end
         end
 
