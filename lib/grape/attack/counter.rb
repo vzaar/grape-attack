@@ -49,7 +49,7 @@ module Grape
       def fetch
         @raw_value ||= begin
           adapter.get(key).split('~').map(&:to_i)
-        rescue ::Grape::Attack""StoreError, NoMethodError
+        rescue ::Grape::Attack::StoreError, NoMethodError
           [0, ttl_in_seconds.seconds.from_now.to_i]
         end
       end
